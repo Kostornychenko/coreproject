@@ -1,0 +1,20 @@
+<script type="text/javascript" src="/js/jquery.validity.js"></script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#register").validity(function(){
+            $("#register #login").require().minLength(4).maxLength(20);
+            $("#register #pass").require().minLength(4).maxLength(20);
+            $("#register #email").require().match("email");
+        })
+    });
+</script>
+<div class="wrap login">
+    <span class="h2">Регистрация</span>
+    <div class="auth">Если у Вас уже есть <strong>Логин</strong> и <strong>Пароль</strong>, войдите на сайт. <a href="/auth/login"><strong>Войти</strong></a></div>
+    <div id="err">
+    <?php if (isset($this->errMessage)) { ?>
+    <div class="err">Пользователь с таким почтовым адресом (<?php echo explode("'",implode("",$this->errMessage))[1]; ?>) уже зарегистрирован!</div>
+    <?php } ?>
+    </div>
+    <?php echo $this->form; ?>
+</div>

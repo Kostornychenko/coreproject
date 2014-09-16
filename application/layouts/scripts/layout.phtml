@@ -1,0 +1,33 @@
+<?php
+require "lessphp/lessc.inc.php";
+$less = new lessc;
+$less->checkedCompile("less/style.less", "css/style.css");
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title><?php echo $this->escape($this->title); ?></title>
+    <meta charset="utf-8" http-equiv="content-type"/>
+    <meta name="description" content="<?php echo $this->escape($this->description)?>">
+    <meta name="keywords" content="<?php echo $this->escape($this->keywords)?>">
+    <link rel="stylesheet" href="/css/style.css"/>
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body>
+<div class="layout">
+<div class="header">
+    <div class="wrap">
+        header
+    </div>
+</div>
+<div class="content">
+    <?php echo $this->layout()->content; ?>
+</div>
+    <div class="hfooter"></div>
+</div>
+<div class="footer">
+    footer
+</div>
+</body>
+</html>
