@@ -1,0 +1,119 @@
+html,
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  background: #fff;
+}
+html *,
+body * {
+  color: #333;
+}
+.wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+.header {
+  float: left;
+  width: 100%;
+}
+.header .top {
+  float: left;
+  width: 100%;
+  background: #000;
+  padding: 3px 0;
+  font-size: 13px;
+}
+.header .top .login {
+  color: #fff;
+  text-decoration: none;
+  float: right;
+  margin-left: 30px;
+}
+.header .top .login:hover {
+  color: #66aa33;
+}
+.header .logo {
+  float: left;
+  background: url("../images/logo.png") top left no-repeat;
+  width: 80px;
+  height: 98px;
+  text-indent: -99999px;
+}
+.header .menu {
+  float: right;
+  display: block;
+  margin: 30px 0 0 0;
+  list-style: none;
+  padding: 0;
+}
+.header .menu li {
+  float: left;
+}
+.header .menu li a {
+  margin: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.header .menu li a.active,
+.header .menu li a:hover {
+  border-bottom: 2px solid #66aa33;
+  color: #66aa33;
+}
+.header .menu li span {
+  color: #66aa33;
+  font-weight: 700;
+}
+.header .menu li:last-child a {
+  margin: 10px 0 10px 10px;
+}
+.header .social {
+  display: block;
+  list-style: none;
+  float: right;
+  clear: left;
+  padding: 0;
+  margin: 0;
+}
+.header .social li {
+  float: left;
+}
+.header .social li a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 0 5px;
+}
+.header .social li .vk {
+  background: #fff url("../images/icon-vk.png") top left no-repeat;
+}
+.header .social li .fb {
+  background: #fff url("../images/icon-facebook.png") top left no-repeat;
+}
+.header .social li .ig {
+  background: #fff url("../images/icon-instagram.png") top left no-repeat;
+}
+.header .social li .vi {
+  background: #fff url("../images/icon-vimeo.jpg") top left no-repeat;
+}
+.user-part {
+  width: 400px;
+  float: left;
+}
+.insta-item {
+  float: left;
+  width: 400px;
+  margin: 20px 0;
+}
+.insta-item img {
+  display: block;
+  width: 400px;
+  height: 400px;
+}
+.insta-item .likes {
+  margin: 4px 0 0 0;
+  padding-left: 20px;
+  font-weight: 700;
+  background: url("../images/like.png") center left no-repeat;
+}

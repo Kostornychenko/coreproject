@@ -1,24 +1,28 @@
+<div class="wrap">
+    <div class="user-part">
+<?php foreach ($this->user as $item) { ?>
+    <div class="insta-item">
+    <img src="<?php echo $item->images->low_resolution->url; ?>" alt=""/>
+        <div class="likes"><?php echo $item->likes->count; ?></div>
+        <div class="title"><?php echo $item->caption->text; ?></div>
+
+    <!--echo '<li style="display: inline-block; padding: 25px"><a href="' .
+        $item->link . '"><img src="' . $item->images->thumbnail->url .
+        '" /></a> <br/>';
+    echo 'By: <em>' . $item->user->username . '</em> <br/>';
+    echo 'Date: ' . date ('d M Y h:i:s', $item->created_time) . '<br/>';
+    echo $item->comments->count . ' comment(s). ' . $item->likes->count .
+        ' likes. </li>';-->
+    <?php //var_dump($item); break; ?>
+    </div>
+<?php } ?>
+</div>
+
+
+
+
+
 <?php
-
-
-echo '</ul>';
-                foreach ($this->user as $item) {
-                   // var_dump($item);
-
-                    echo '<li style="display: inline-block; padding: 25px"><a href="' .
-                        $item->link . '"><img src="' . $item->images->thumbnail->url .
-                        '" /></a> <br/>';
-                    echo 'By: <em>' . $item->user->username . '</em> <br/>';
-                    echo 'Date: ' . date ('d M Y h:i:s', $item->created_time) . '<br/>';
-                    echo $item->comments->count . ' comment(s). ' . $item->likes->count .
-                        ' likes. </li>';
-                }
-                echo '</ul>';
-
-
-
-
-
    /*  try {
          // initialize client
          $client = new Zend_Http_Client('https://api.instagram.com/v1/tags/'.
@@ -53,3 +57,4 @@ echo '</ul>';
          exit;
      }*/
 ?>
+</div>
