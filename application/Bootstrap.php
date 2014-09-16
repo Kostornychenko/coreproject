@@ -29,7 +29,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $acl->addRole('admin', 'user');
 
         /*Guest Access*/
-        $acl->allow('guest', 'default-index', array('index'));
+        $acl->allow('guest', 'default-index', array('index', 'photos'));
         $acl->allow('guest', 'default-auth', array('index', 'register', 'login', 'logout', 'social'));
         $acl->allow('guest', 'default-error', array('error'));
 

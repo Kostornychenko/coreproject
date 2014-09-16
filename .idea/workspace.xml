@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9b959545-be13-4203-b8bb-a5129fe398e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/readme.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/application/views/scripts/index/photos.phtml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/Bootstrap.php" afterPath="$PROJECT_DIR$/application/Bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/controllers/IndexController.php" afterPath="$PROJECT_DIR$/application/controllers/IndexController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="coreproject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,10 +28,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="readme.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/readme.txt">
+      <file leaf-file-name="IndexController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/IndexController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
+            <state line="37" column="33" selection-start="1154" selection-end="1154" vertical-scroll-proportion="-21.884615" vertical-offset="60" max-vertical-offset="935">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="photos.phtml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/application/views/scripts/index/photos.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="21" selection-start="92" selection-end="92" vertical-scroll-proportion="0.09714286" vertical-offset="0" max-vertical-offset="1020">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Bootstrap.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/Bootstrap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="68" selection-start="961" selection-end="961" vertical-scroll-proportion="-14.384615" vertical-offset="153" max-vertical-offset="1156">
               <folding />
             </state>
           </provider>
@@ -49,7 +69,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/application/configs/application.ini" />
-        <option value="$PROJECT_DIR$/application/controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/application/controllers/ErrorController.php" />
         <option value="$PROJECT_DIR$/application/controllers/AuthController.php" />
         <option value="$PROJECT_DIR$/application/views/scripts/index/index.phtml" />
@@ -61,10 +80,12 @@
         <option value="$PROJECT_DIR$/application/modules/admin/views/scripts/index/index.phtml" />
         <option value="$PROJECT_DIR$/application/modules/admin/controllers/IndexController.php" />
         <option value="$PROJECT_DIR$/application/layouts/scripts/admin.phtml" />
-        <option value="$PROJECT_DIR$/application/Bootstrap.php" />
         <option value="$PROJECT_DIR$/public/less/style.less" />
         <option value="$PROJECT_DIR$/public/less/admin.less" />
         <option value="$PROJECT_DIR$/public/readme.txt" />
+        <option value="$PROJECT_DIR$/application/Bootstrap.php" />
+        <option value="$PROJECT_DIR$/application/controllers/IndexController.php" />
+        <option value="$PROJECT_DIR$/application/views/scripts/index/photos.phtml" />
       </list>
     </option>
   </component>
@@ -503,7 +524,11 @@
       <created>1410863141882</created>
       <updated>1410863141882</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="version 1.0">
+      <created>1410863874286</created>
+      <updated>1410863874286</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -554,13 +579,6 @@
     <entry file="file://$PROJECT_DIR$/application/configs/application.ini">
       <provider selected="true" editor-type-id="text-editor">
         <state line="46" column="40" selection-start="1692" selection-end="1692" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="935">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="0" selection-start="136" selection-end="136" vertical-scroll-proportion="-5.8846154" vertical-offset="0" max-vertical-offset="323">
           <folding />
         </state>
       </provider>
@@ -656,16 +674,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/Bootstrap.php">
+    <entry file="file://$PROJECT_DIR$/public/readme.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="0" selection-start="1147" selection-end="1147" vertical-scroll-proportion="0.52337515" vertical-offset="153" max-vertical-offset="1156">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/readme.txt">
+    <entry file="file://$PROJECT_DIR$/application/Bootstrap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
+        <state line="31" column="68" selection-start="961" selection-end="961" vertical-scroll-proportion="-14.384615" vertical-offset="153" max-vertical-offset="1156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="37" column="33" selection-start="1154" selection-end="1154" vertical-scroll-proportion="-21.884615" vertical-offset="60" max-vertical-offset="935">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/views/scripts/index/photos.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="21" selection-start="92" selection-end="92" vertical-scroll-proportion="0.09714286" vertical-offset="0" max-vertical-offset="1020">
           <folding />
         </state>
       </provider>
