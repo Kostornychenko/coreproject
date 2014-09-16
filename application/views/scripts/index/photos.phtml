@@ -4,8 +4,19 @@
     <div class="insta-item">
     <img src="<?php echo $item->images->low_resolution->url; ?>" alt=""/>
         <div class="likes"><?php echo $item->likes->count; ?></div>
-        <div class="title"><?php echo $item->caption->text; ?></div>
-
+        <div class="title">
+            <?php if (isset($item->caption->text)) {
+                echo $item->caption->text;
+            } ?>
+        </div>
+        <div class="comments">
+        <?php foreach($item->comments->data as $key => $value) { ?>
+            <div class="item">
+                <strong><?php echo $value->from->username; ?></strong>
+                <?php echo $value->text; ?>
+            </div>
+        <?php } ?>
+        </div>
     <!--echo '<li style="display: inline-block; padding: 25px"><a href="' .
         $item->link . '"><img src="' . $item->images->thumbnail->url .
         '" /></a> <br/>';
@@ -13,7 +24,7 @@
     echo 'Date: ' . date ('d M Y h:i:s', $item->created_time) . '<br/>';
     echo $item->comments->count . ' comment(s). ' . $item->likes->count .
         ' likes. </li>';-->
-    <?php //var_dump($item); break; ?>
+    <?php //var_dump($item->comments); //break; ?>
     </div>
 <?php } ?>
 </div>

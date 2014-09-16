@@ -117,3 +117,6 @@ body * {
   font-weight: 700;
   background: url("../images/like.png") center left no-repeat;
 }
+.insta-item .comments {
+  margin: 5px 0;
+}
