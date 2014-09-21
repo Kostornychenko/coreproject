@@ -1,71 +1,56 @@
 <div class="wrap">
-    <div class="user-part">
-<?php foreach ($this->user as $item) { ?>
-    <div class="insta-item">
-    <img src="<?php echo $item->images->low_resolution->url; ?>" alt=""/>
-        <div class="likes"><?php echo $item->likes->count; ?></div>
-        <div class="title">
-            <?php if (isset($item->caption->text)) {
-                echo $item->caption->text;
-            } ?>
-        </div>
-        <div class="comments">
-        <?php foreach($item->comments->data as $key => $value) { ?>
-            <div class="item">
-                <strong><?php echo $value->from->username; ?></strong>
-                <?php echo $value->text; ?>
+    <div class="user-part up1">
+        <h1>@coreproject</h1>
+        <?php foreach ($this->user as $item) { ?>
+        <a href="<?php echo $item->link; ?>" class="insta-item" target="_blank">
+            <img src="<?php echo $item->images->low_resolution->url; ?>"/>
+            <div class="block">
+                <div class="likes"><?php echo $item->likes->count; ?></div>
+                <div class="title">
+                    <?php if (isset($item->caption->text)) { ?>
+                    <strong><?php echo $item->caption->from->username; ?></strong>
+                    <?php }
+                    if (isset($item->caption->text)) {
+                        echo $item->caption->text;
+                    } ?>
+                </div>
+                <div class="comments">
+                <?php foreach($item->comments->data as $key => $value) { ?>
+                    <div class="item">
+                        <strong><?php echo $value->from->username; ?></strong>
+                        <?php echo $value->text; ?>
+                    </div>
+                <?php } ?>
+                </div>
             </div>
+        </a>
         <?php } ?>
-        </div>
-    <!--echo '<li style="display: inline-block; padding: 25px"><a href="' .
-        $item->link . '"><img src="' . $item->images->thumbnail->url .
-        '" /></a> <br/>';
-    echo 'By: <em>' . $item->user->username . '</em> <br/>';
-    echo 'Date: ' . date ('d M Y h:i:s', $item->created_time) . '<br/>';
-    echo $item->comments->count . ' comment(s). ' . $item->likes->count .
-        ' likes. </li>';-->
-    <?php //var_dump($item->comments); //break; ?>
     </div>
-<?php } ?>
-</div>
-
-
-
-
-
-<?php
-   /*  try {
-         // initialize client
-         $client = new Zend_Http_Client('https://api.instagram.com/v1/tags/'.
-             $tag1 . '/media/recent');
-         $client->setParameterGet('client_id', $CLIENT_ID);
-
-         // получение изображений с соответствующими метками
-         // передача запроса и декодирование ответа
-         $response = $client->request();
-         $result = json_decode($response->getBody());
-
-         // отображение фотографий
-         $data = $result->data;
-         if (count($data) > 0) {
-             echo '<ul>';
-             foreach ($data as $item) {
-                 //var_dump($item);
-                 echo '<li style="display: inline-block; padding: 25px"><a href="' .
-                     $item->link . '"><img src="' . $item->images->thumbnail->url .
-                     '" /></a> <br/>';
-                 echo 'By: <em>' . $item->user->username . '</em> <br/>';
-                 echo $item->tags[0].'<br>';
-                 echo 'Date: ' . date ('d M Y h:i:s', $item->created_time) . '<br/>';
-                 echo $item->comments->count . ' comment(s). ' . $item->likes->count .
-                     ' likes. </li>';
-             }
-             echo '</ul>';
-         }
-
-     } catch (Exception $e) {
-         echo 'ERROR: ' . $e->getMessage() . print_r($client);
-         exit;
-     }*/
-?>
+    <div class="user-part up2">
+        <h1>#thecoreproject</h1>
+        <?php foreach ($this->tag as $item) { ?>
+            <a href="<?php echo $item->link; ?>" class="insta-item" target="_blank">
+                <img src="<?php echo $item->images->low_resolution->url; ?>"/>
+                <div class="block">
+                    <div class="likes"><?php echo $item->likes->count; ?></div>
+                    <div class="title">
+                        <?php if (isset($item->caption->text)) { ?>
+                            <strong><?php echo $item->caption->from->username; ?></strong>
+                        <?php }
+                        if (isset($item->caption->text)) {
+                            echo $item->caption->text;
+                        } ?>
+                    </div>
+                    <div class="comments">
+                        <?php foreach($item->comments->data as $key => $value) { ?>
+                            <div class="item">
+                                <strong><?php echo $value->from->username; ?></strong>
+                                <?php echo $value->text; ?>
+                            </div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </a>
+        <?php } ?>
+    </div>
 </div>

@@ -4,7 +4,8 @@ html,body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  background: #fff;
+  //background: #f0f0f0;
+  background: url("http://test.pluz.me/wp-content/themes/pluzme/images/bg.gif") top left repeat;
 
   * {
     color: #333;
@@ -20,6 +21,8 @@ html,body {
 .header {
   float: left;
   width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #ccc;
 
   .top {
     float: left;
@@ -45,6 +48,7 @@ html,body {
     background: url("../images/logo.png") top left no-repeat;
     width: 80px;
     height: 98px;
+    margin: 0 0 5px 0;
     text-indent: -99999px;
   }
   .menu {
@@ -53,6 +57,7 @@ html,body {
     margin: 30px 0 0 0;
     list-style: none;
     padding: 0;
+    font-size: 16px;
 
     li {
       float: left;
@@ -114,26 +119,127 @@ html,body {
   }
 }
 .user-part {
-  width: 400px;
+  width: 460px;
   float: left;
+}
+.up1 {
+  margin: 0 20px 0 0;
+}
+.up2 {
+  margin: 0 0 0 20px;
 }
 .insta-item {
   float: left;
-  width: 400px;
-  margin: 20px 0;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0px;
+  text-decoration: none;
+  background: #fff;
+
+  .block {
+    padding: 5px 10px;
+  }
 
   img {
     display: block;
-    width: 400px;
-    height: 400px;
+    width: 100%;
   }
+
   .likes {
     margin: 4px 0 0 0;
     padding-left: 20px;
     font-weight: 700;
     background: url("../images/like.png") center left no-repeat;
   }
+
   .comments {
     margin: 5px 0;
   }
+}
+
+/*footer*/
+.footer {
+  width: 100%;
+  float: left;
+}
+
+/*column*/
+.column {
+  float: left;
+  width: 700px;
+
+  .news {
+    width: 100%;
+    float: left;
+
+    .part {
+      width: 50%;
+      float: left;
+    }
+
+    .news-item {
+      display: block;
+      float: left;
+      width: 320px;
+      margin: 0 30px 30px 0;
+      background: #fff;
+      text-decoration: none;
+
+      .line {
+        float: left;
+        width: 100%;
+
+        .author {
+          float: left;
+          font-size: 12px;
+          padding: 5px 10px;
+          color: #777;
+          text-decoration: none;
+        }
+        .author:hover {
+          text-decoration: underline;
+        }
+
+        .date {
+          float: right;
+          font-size: 12px;
+          padding: 5px 10px;
+          color: #777;
+        }
+      }
+
+      .title {
+        float: left;
+        text-decoration: none;
+        padding: 0 10px 10px 10px;
+      }
+
+      img {
+        float: left;
+        width: 100%;
+      }
+    }
+
+    .news-item:hover {
+      .title {
+        color: @green;
+      }
+      img {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+.sidebar {
+  float: left;
+  width: 260px;
+  height: 500px;
+}
+
+/*promo*/
+.promo {
+  width: 100%;
+  float: left;
+  background: #000;
+  height:0px;
 }
