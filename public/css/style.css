@@ -3,7 +3,7 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  background: url("http://test.pluz.me/wp-content/themes/pluzme/images/bg.gif") top left repeat;
+  background: #fff;
 }
 html *,
 body * {
@@ -16,8 +16,6 @@ body * {
 .header {
   float: left;
   width: 100%;
-  background: #fff;
-  border-bottom: 1px solid #ccc;
 }
 .header .top {
   float: left;
@@ -139,60 +137,87 @@ body * {
   width: 100%;
   float: left;
 }
-.column {
-  float: left;
-  width: 700px;
-}
-.column .news {
-  width: 100%;
-  float: left;
-}
-.column .news .part {
+.part {
   width: 50%;
   float: left;
 }
-.column .news .news-item {
+.p1 .news-item {
+  margin-right: 20px;
+}
+.p2 .news-item {
+  margin-left: 20px;
+}
+.news-item {
+  position: relative;
   display: block;
   float: left;
-  width: 320px;
-  margin: 0 30px 30px 0;
+  width: 460px;
+  margin-bottom: 40px;
   background: #fff;
   text-decoration: none;
 }
-.column .news .news-item .line {
+.news-item .hover {
+  position: absolute;
+  top: 66px;
+  left: 166px;
+  background: url("../images/play.png") top left no-repeat;
+  width: 128px;
+  height: 128px;
+  display: none;
+  z-index: 9;
+  cursor: pointer;
+}
+.news-item .add {
   float: left;
   width: 100%;
 }
-.column .news .news-item .line .author {
+.news-item .line {
+  float: left;
+  width: 100%;
+}
+.news-item .line .author {
   float: left;
   font-size: 12px;
   padding: 5px 10px;
-  color: #777;
+  color: #66aa33;
   text-decoration: none;
 }
-.column .news .news-item .line .author:hover {
+.news-item .line .author:hover {
   text-decoration: underline;
 }
-.column .news .news-item .line .date {
+.news-item .line .date {
   float: right;
   font-size: 12px;
   padding: 5px 10px;
-  color: #777;
+  color: #333;
 }
-.column .news .news-item .title {
+.news-item .title {
   float: left;
+  color: #000;
+  font-size: 16px;
   text-decoration: none;
   padding: 0 10px 10px 10px;
 }
-.column .news .news-item img {
+.news-item .title:hover {
+  text-decoration: underline;
+}
+.news-item img {
   float: left;
   width: 100%;
 }
-.column .news .news-item:hover .title {
-  color: #66aa33;
+.news-item:hover .title,
+.news-item:hover .author,
+.news-item:hover .date {
+  color: #fff;
 }
-.column .news .news-item:hover img {
-  opacity: 0.7;
+.news-item:hover img {
+  opacity: 0.8;
+}
+.news-item:hover .hover {
+  display: block;
+}
+.news-item:hover .add {
+  background: #66aa33;
 }
 .sidebar {
   float: left;
@@ -202,6 +227,15 @@ body * {
 .promo {
   width: 100%;
   float: left;
-  background: #000;
-  height: 0px;
+  background: url("../images/bg.gif") top left repeat;
+  height: 400px;
+}
+.promo .bg {
+  height: 400px;
+  box-shadow: inset 0px 0px 1px 1px #ccc;
+}
+.promo iframe {
+  width: 720px;
+  height: 400px;
+  margin: 0 120px;
 }

@@ -17,7 +17,7 @@ class IndexController extends Zend_Controller_Action {
         $CLIENT_ID = 'fa2641332bca4ce6bd8f71bd4345cc0f';
         $CLIENT_SECRET = 'c44e29e7449444e3bc1f58ff499f5e8e';
         $user = '332756956';
-        $tag = 'coreproject';
+        $tag = 'coreprojectua';
 
         try {
             $client = new Zend_Http_Client('https://api.instagram.com/v1/users/'.$user.'/media/recent');
