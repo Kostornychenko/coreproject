@@ -48,5 +48,21 @@ class IndexController extends Zend_Controller_Action {
             exit;
         }
     }
+
+    public function videoAction() {
+
+    }
+
+    public function episodesAction(){
+
+    }
+
+    public function crewAction(){
+
+    }
+
+    public function itemAction(){
+
+    }
 }
 

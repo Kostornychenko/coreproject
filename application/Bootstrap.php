@@ -29,7 +29,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         $acl->addRole('admin', 'user');
 
         /*Guest Access*/
-        $acl->allow('guest', 'default-index', array('index', 'photos'));
+        $acl->allow('guest', 'default-index', array('index', 'photos', 'video', 'episodes', 'crew', 'item'));
         $acl->allow('guest', 'default-auth', array('index', 'register', 'login', 'logout', 'social'));
         $acl->allow('guest', 'default-error', array('error'));
 
@@ -52,7 +52,45 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap {
         ));
         $router = $front->getRouter();
 
+        $index_photos = new Zend_Controller_Router_Route(
+            'photos/',
+            array(
+                'module'=>'default',
+                'controller' => 'index',
+                'action'     => 'photos'
+            )
+        );
+        $router->addRoute('index_photos', $index_photos);
 
+        $index_video = new Zend_Controller_Router_Route(
+            'video/',
+            array(
+                'module'=>'default',
+                'controller' => 'index',
+                'action'     => 'video'
+            )
+        );
+        $router->addRoute('index_video', $index_video);
+
+        $index_episodes = new Zend_Controller_Router_Route(
+            'episodes/',
+            array(
+                'module'=>'default',
+                'controller' => 'index',
+                'action'     => 'episodes'
+            )
+        );
+        $router->addRoute('index_episodes', $index_episodes);
+
+        $index_crew = new Zend_Controller_Router_Route(
+            'crew/',
+            array(
+                'module'=>'default',
+                'controller' => 'index',
+                'action'     => 'crew'
+            )
+        );
+        $router->addRoute('index_crew', $index_crew);
     }
 
 }

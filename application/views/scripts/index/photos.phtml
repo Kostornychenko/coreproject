@@ -1,56 +1,64 @@
+<script type="text/javascript">
+    $(function(){
+        $(".menu li a").removeClass("active");
+        $(".menu-photos").addClass("active");
+    })
+</script>
 <div class="wrap">
-    <div class="user-part up1">
-        <h1>@coreproject</h1>
-        <?php foreach ($this->user as $item) { ?>
-        <a href="<?php echo $item->link; ?>" class="insta-item" target="_blank">
-            <img src="<?php echo $item->images->low_resolution->url; ?>"/>
-            <div class="block">
-                <div class="likes"><?php echo $item->likes->count; ?></div>
-                <div class="title">
-                    <?php if (isset($item->caption->text)) { ?>
-                    <strong><?php echo $item->caption->from->username; ?></strong>
-                    <?php }
-                    if (isset($item->caption->text)) {
-                        echo $item->caption->text;
-                    } ?>
-                </div>
-                <div class="comments">
-                <?php foreach($item->comments->data as $key => $value) { ?>
-                    <div class="item">
-                        <strong><?php echo $value->from->username; ?></strong>
-                        <?php echo $value->text; ?>
-                    </div>
-                <?php } ?>
-                </div>
-            </div>
-        </a>
-        <?php } ?>
-    </div>
-    <div class="user-part up2">
-        <h1>#thecoreprojectua</h1>
-        <?php foreach ($this->tag as $item) { ?>
-            <a href="<?php echo $item->link; ?>" class="insta-item" target="_blank">
-                <img src="<?php echo $item->images->low_resolution->url; ?>"/>
-                <div class="block">
-                    <div class="likes"><?php echo $item->likes->count; ?></div>
-                    <div class="title">
-                        <?php if (isset($item->caption->text)) { ?>
-                            <strong><?php echo $item->caption->from->username; ?></strong>
-                        <?php }
-                        if (isset($item->caption->text)) {
-                            echo $item->caption->text;
-                        } ?>
-                    </div>
-                    <div class="comments">
-                        <?php foreach($item->comments->data as $key => $value) { ?>
-                            <div class="item">
-                                <strong><?php echo $value->from->username; ?></strong>
-                                <?php echo $value->text; ?>
-                            </div>
-                        <?php } ?>
+    <div class="page">
+        <div class="user-part up1">
+            <h2>@coreproject</h2>
+            <?php foreach ($this->user as $item) { ?>
+                <div class="insta-item">
+                    <a href="<?php echo $item->link; ?>" target="_blank"><img src="<?php echo $item->images->low_resolution->url; ?>"/></a>
+                    <div class="block">
+                        <div class="likes"><?php echo $item->likes->count; ?></div>
+                        <div class="title">
+                            <?php if (isset($item->caption->text)) { ?>
+                                <strong><a href="<?php echo "http://instagram.com/".$item->caption->from->username; ?>" target="_blank"><?php echo $item->caption->from->username; ?></a></strong>
+                            <?php }
+                            if (isset($item->caption->text)) {
+                                echo $item->caption->text;
+                            } ?>
+                        </div>
+                        <div class="comments">
+                            <?php foreach($item->comments->data as $key => $value) { ?>
+                                <div class="item">
+                                    <strong><a href="<?php echo "http://instagram.com/".$value->from->username; ?>" target="_blank"><?php echo $value->from->username; ?></a></strong>
+                                    <?php echo $value->text; ?>
+                                </div>
+                            <?php } ?>
+                        </div>
                     </div>
                 </div>
-            </a>
-        <?php } ?>
+            <?php } ?>
+        </div>
+        <div class="user-part up2">
+            <h2>#coreprojectua</h2>
+            <?php foreach ($this->tag as $item) { ?>
+                <div class="insta-item">
+                    <a href="<?php echo $item->link; ?>" target="_blank"><img src="<?php echo $item->images->low_resolution->url; ?>"/></a>
+                    <div class="block">
+                        <div class="likes"><?php echo $item->likes->count; ?></div>
+                        <div class="title">
+                            <?php if (isset($item->caption->text)) { ?>
+                                <strong><a href="<?php echo "http://instagram.com/".$item->caption->from->username; ?>" target="_blank"><?php echo $item->caption->from->username; ?></a></strong>
+                            <?php }
+                            if (isset($item->caption->text)) {
+                                echo $item->caption->text;
+                            } ?>
+                        </div>
+                        <div class="comments">
+                            <?php foreach($item->comments->data as $key => $value) { ?>
+                                <div class="item">
+                                    <strong><a href="<?php echo "http://instagram.com/".$value->from->username; ?>" target="_blank"><?php echo $value->from->username; ?></a></strong>
+                                    <?php echo $value->text; ?>
+                                </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
+        </div>
     </div>
 </div>

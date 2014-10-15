@@ -14,31 +14,52 @@ $less->checkedCompile("less/style.less", "css/style.css");
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!--social-->
+    <script type="text/javascript" src="//vk.com/js/api/openapi.js?115"></script>
+    <script type="text/javascript">
+        VK.init({apiId: 2727030, onlyWidgets: true});
+    </script>
 </head>
 <body>
+<!--socail-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/uk_UA/sdk.js#xfbml=1&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
 <div class="layout">
 <div class="header">
     <div class="top">
         <div class="wrap">
-            <a href="" class="login">Вхід</a>
+            <?php if (Zend_Auth::getInstance()->hasIdentity()) {
+                $user = Zend_Auth::getInstance()->getIdentity(); ?>
+                <a href="/auth/logout" class="link">Вихід</a>
+                <a href="/user/<?php echo $this->transliteration($user->login); ?>" class="link"><?php if (!empty($user->name)) {echo $user->name; } else {echo $user->login;} ?></a>
+                <a href="/user/add" class="link green">Додати новину</a>
+            <?php } else { ?>
+                <a href="/auth/login" class="link">Вхід</a>
+                <a href="/auth/register" class="link">Реєстрація</a>
+            <?php } ?>
             <ul class="social">
-                <li><a class="fb" href=""></a></li>
+                <li><a class="fb" href="https://www.facebook.com/coreproject.snowboarding" target="_blank"></a></li>
                 <li><a class="vk" href=""></a></li>
-                <li><a class="ig" href=""></a></li>
-                <li><a class="vi" href=""></a></li>
+                <li><a class="ig" href="http://instagram.com/coreproject" target="_blank"></a></li>
+                <li><a class="vi" href="https://vimeo.com/coreproject" target="_blank"></a></li>
             </ul>
         </div>
     </div>
     <div class="wrap">
         <a class="logo" href="/">coreproject.com.ua</a>
         <ul class="menu">
-            <li><a class="active" href="">Головна</a><span>&#8226;</span></li>
-            <li><a href="">Фото</a><span>&#8226;</span></li>
-            <li><a href="">Відео</a><span>&#8226;</span></li>
-            <li><a href="">Епізоди</a><span>&#8226;</span></li>
-            <li><a href="">Новини</a><span>&#8226;</span></li>
-            <li><a href="">Контакти</a><span>&#8226;</span></li>
-            <li><a href="">Команда</a></li>
+            <li><a class="menu-main active" href="/">Головна</a><span>&#8226;</span></li>
+            <li><a class="menu-photos" href="/photos/">Фото</a><span>&#8226;</span></li>
+            <li><a class="menu-video" href="/video/">Відео</a><span>&#8226;</span></li>
+            <li><a class="menu-episodes" href="/episodes/">Епізоди</a><span>&#8226;</span></li>
+            <li><a class="menu-crew" href="/crew/">Команда</a><span>&#8226;</span></li>
+            <li><a target="_blank" href="http://www.coreshop.com.ua/">Магазин</a></li>
         </ul>
     </div>
 </div>
@@ -48,7 +69,47 @@ $less->checkedCompile("less/style.less", "css/style.css");
     <div class="hfooter"></div>
 </div>
 <div class="footer">
-    footer
+    <div class="wrap">
+        <div class="block">
+            <h3>меню</h3>
+            <ul>
+                <li><a href="">Фото</a></li>
+                <li><a href="">Відео</a></li>
+                <li><a href="">Епізоди</a></li>
+                <li><a href="">Новини</a></li>
+                <li><a href="">Контакти</a></li>
+            </ul>
+        </div>
+        <div class="block">
+            <h3>категорії</h3>
+            <ul>
+                <li><a href="">звіт</a></li>
+                <li><a href="">афіша</a></li>
+                <li><a href="">сноуборд</a></li>
+                <li><a href="">скейтборд</a></li>
+                <li><a href="">лижі</a></li>
+            </ul>
+        </div>
+        <div class="block">
+            <h3>теги</h3>
+            <ul>
+                <li><a href="">#гори</a></li>
+                <li><a href="">#буковель</a></li>
+                <li><a href="">#сноуборд</a></li>
+                <li><a href="">#скейтборд</a></li>
+                <li><a href="">#лижі</a></li>
+                <li><a href="">#гори</a></li>
+                <li><a href="">#буковель</a></li>
+            </ul>
+        </div>
+        <div class="block">
+            <div class="copy">&copy; 2011-<?php echo date("Y",time()); ?> CORE project
+                <br/>Використання матеріалів дозволено тільки за наявності активного посилання.</div>
+        </div>
+    </div>
+    <div class="bottom">
+        <a href="mailto:info@coreproject.com.ua">info@coreproject.com.ua</a>
+    </div>
 </div>
 </body>
 </html>

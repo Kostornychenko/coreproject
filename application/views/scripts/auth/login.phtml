@@ -1,13 +1,16 @@
+<script type="text/javascript">
+    $(function(){
+        $(".menu li a").removeClass("active");
+    })
+</script>
 <script src="http://login4play.com/assets/js/login4play.js" type="text/javascript"></script>
-<div class="wrap login">
-    <span class="h2">Вход</span>
-    <div class="auth">Введите свой Логин и Пароль для входа на сайт. Если Вы еще не зарегистрированы, сделайте это сейчас. <a href="/auth/register"><strong>Регистрация</strong></a></div>
-    <div class="part">
-        <div class="err"><?php echo $this->errMessage; ?></div>
-        <?php echo $this->form; ?>
-    </div>
-    <div class="part">
-        <p>Войти с помощью социальной сети</p>
-        <div id="login4play" login-data="redirect_uri=<?php echo urlencode("http://".$_SERVER['SERVER_NAME']."/auth/social"); ?>"></div>
+<div class="wrap">
+    <div class="page">
+        <div class="login">
+            <div class="err"><?php echo $this->errMessage; ?></div>
+            <?php echo $this->form; ?>
+            <p>Увійти за допомогою соціальної мережі</p>
+            <div id="login4play" login-data="redirect_uri=<?php echo urlencode("http://".$_SERVER['SERVER_NAME']."/auth/social"); ?>"></div>
+        </div>
     </div>
 </div>

@@ -4,16 +4,16 @@ html,body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
-  //background: #f0f0f0;
   background: #fff;
-
-
+  height: 100%;
 
   * {
     color: #333;
   }
 }
-
+.layout {
+  min-height: 100%;
+}
 .wrap {
   width: 960px;
   margin: 0 auto;
@@ -23,9 +23,6 @@ html,body {
 .header {
   float: left;
   width: 100%;
-  //background: url("../images/bg.gif") top left repeat;
-  //background: url("../images/bg.gif") top left repeat;
-  //border-bottom: 1px solid #ccc;
 
   .top {
     float: left;
@@ -34,14 +31,20 @@ html,body {
     padding: 3px 0;
     font-size: 13px;
 
-    .login {
+    .link {
       color: #fff;
       text-decoration: none;
       float: right;
-      margin-left: 30px;
+      margin-left: 10px;
     }
-    .login:hover {
+    .link:hover {
       color: @green;
+    }
+    .link.green {
+      color: @green;
+    }
+    .link.green:hover {
+      border-bottom: 1px solid @green;
     }
 
   }
@@ -51,7 +54,7 @@ html,body {
     background: url("../images/logo.png") top left no-repeat;
     width: 80px;
     height: 98px;
-    margin: 0 0 5px 0;
+    margin: 0 0 10px 0;
     text-indent: -99999px;
   }
   .menu {
@@ -67,19 +70,20 @@ html,body {
 
       a {
         margin: 10px;
+        font-size: 14px;
         text-decoration: none;
         text-transform: uppercase;
-        font-weight: 700;
+        //font-weight: 700;
       }
 
       a.active,
       a:hover {
-        border-bottom: 2px solid @green;
+        border-bottom: 1px solid @green;
         color: @green;
       }
       span {
-        color: @green;
-        font-weight: 700;
+        font-weight: 100;
+
       }
     }
 
@@ -118,6 +122,18 @@ html,body {
       .vi {
         background:  #fff url("../images/icon-vimeo.jpg") top left no-repeat;
       }
+      .vk:hover {
+        background: @green url("../images/icon-vk.png") top left no-repeat;
+      }
+      .fb:hover {
+        background: @green url("../images/icon-facebook.png") top left no-repeat;
+      }
+      .ig:hover {
+        background: @green url("../images/icon-instagram.png") top left no-repeat;
+      }
+      .vi:hover {
+        background: @green url("../images/icon-vimeo.jpg") top left no-repeat;
+      }
     }
   }
 }
@@ -126,19 +142,27 @@ html,body {
   float: left;
 }
 .up1 {
-  margin: 0 20px 0 0;
+  margin: 0 20px 30px 0;
 }
 .up2 {
-  margin: 0 0 0 20px;
+  margin: 0 0 30px 20px;
 }
 .insta-item {
   float: left;
   width: 100%;
-  margin: 10px 0;
+  margin: 0 0 30px 0;
   padding: 0px;
   text-decoration: none;
   background: #fff;
 
+  strong {
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
   .block {
     padding: 5px 10px;
   }
@@ -159,30 +183,42 @@ html,body {
     margin: 5px 0;
   }
 }
+.insta-item:hover {
+  .block {
+    background: @green;
+  }
 
-/*footer*/
-.footer {
-  width: 100%;
-  float: left;
+  img {
+    opacity: 0.8;
+  }
+
+  * {
+    color: #fff;
+  }
+
+  .likes {
+    background: url("../images/like_neg.png") center left no-repeat;
+  }
 }
 
-/*column*/
-
-
-    .part {
-      width: 50%;
-      float: left;
-    }
-    .p1 {
-      .news-item {
-        margin-right: 20px;
-      }
-    }
-    .p2 {
-      .news-item {
-        margin-left: 20px;
-      }
-    }
+/*index*/
+.part {
+  width: 50%;
+  float: left;
+}
+.p1 {
+  .news-item {
+    margin-right: 20px;
+  }
+}
+.p2 {
+  .news-item {
+    margin-left: 20px;
+  }
+  h2 {
+    margin-left: 20px;
+  }
+}
 
 /*news-item*/
 .news-item {
@@ -276,17 +312,230 @@ html,body {
 .promo {
   width: 100%;
   float: left;
-  background: url("../images/bg.gif") top left repeat;
-  height: 400px;
+  background: #000 url("../images/bg.gif") top left repeat;
+  height: 500px;
   .bg {
-    //background: rgba(0,0,0,0.2);
-    height: 400px;
+    height: 500px;
     box-shadow:inset 0px 0px 1px 1px #ccc;
   }
 
   iframe {
-    width: 720px;
-    height: 400px;
-    margin: 0 120px;
+    width: 960px;
+    height: 500px;
+    margin: 0;
+  }
+}
+
+/*footer*/
+.hfooter {
+  float: left;
+  width: 100%;
+  height: 360px;
+}
+.footer {
+  float: left;
+  width: 100%;
+  margin-top: -360px;
+  height: 360px;
+  background: #000;
+
+  .block {
+    margin: 30px 0;
+    float: left;
+    width: 240px;
+
+    .copy {
+      margin-top: 20px;
+      color: #fff;
+      font-size: 12px;
+      background: url("../images/logo_neg.png") top left no-repeat;
+      padding-top: 100px;
+    }
+
+    h3 {
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    ul {
+      float: left;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+
+      li {
+        a {
+          color: #fff;
+          line-height: 28px;
+          text-decoration: none;
+        }
+        a:hover {
+          border-bottom: 1px dashed #fff;
+        }
+      }
+    }
+  }
+
+  .bottom {
+    float: left;
+    width: 100%;
+    padding: 10px 0 20px 0;
+    border-top: 1px solid #333;
+    text-align: center;
+
+    a {
+      color: #999;
+      text-decoration: none;
+      border-bottom: 1px dashed #999;
+      font-size: 12px;
+    }
+
+    a:hover {
+      border: 0;
+    }
+  }
+}
+
+/*page*/
+.page {
+  position: relative;
+  float: left;
+  width: 100%;
+  border-top: 2px solid #333;
+
+  /*login*/
+  .login {
+    margin: 30px auto;
+    width: 320px;
+
+      .err, .errors li {
+        color: #ff0000;
+      }
+
+      .zend_form {
+        dd {
+          margin: 5px 0 10px 0;
+
+          input[type="text"],input[type="password"] {
+            width: 300px;
+            padding: 10px;
+            border: 0;
+            outline: none;
+            box-shadow:inset 1px 1px 1px 1px #ccc;
+            border-radius: 5px;
+          }
+          input[type="submit"] {
+            width: 320px;
+            background: @green;
+            color: #fff;
+            cursor: pointer;
+            padding: 10px 50px;
+            border-radius: 5px;
+            outline: none;
+            border: 0;
+          }
+          input[type="submit"]:hover {
+            box-shadow:inset 0px 0px 1px 1px #fff;
+          }
+        }
+      }
+    }
+}
+
+/*video*/
+.video-item {
+  float: left;
+  width: 100%;
+  margin: 10px 0 30px 0;
+
+  h3 {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+    font-size: 26px;
+  }
+  p {
+    margin: 0;
+  }
+
+  iframe {
+    margin-top: 10px;
+    width: 960px;
+    height: 530px;
+  }
+}
+
+/*crew*/
+.crew {
+  margin: 20px 0 40px 0;
+
+  p {
+    line-height: 22px;
+  }
+}
+
+/*item*/
+.news {
+  padding: 20px 0;
+  border-bottom: 1px solid #000;
+
+  h1 {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-size: 26px;
+    margin: 0;
+  }
+
+  iframe {
+    width: 960px;
+    height: 520px;
+  }
+
+  img {
+    float: left;
+    width: 960px;
+    margin: 0;
+  }
+
+  .pre {
+    float: left;
+    width: 100%;
+    margin: 10px 0;
+
+    .item {
+      float: left;
+      margin: 0 50px 0 0;
+
+      a {
+        font-style: italic;
+        margin: 0 5px 0 0;
+      }
+
+      a:hover {
+        color: @green;
+      }
+    }
+  }
+
+  .text {
+    float: left;
+    width: 100%;
+
+    a:hover {
+      color: @green;
+    }
+    img {
+      margin: 5px 0;
+    }
+  }
+}
+
+.social {
+  float: left;
+  width: 100%;
+
+  .item {
+    float: left;
   }
 }

@@ -155,7 +155,7 @@ class AuthController extends Zend_Controller_Action
             $authStorage->write($identity);
             $this->_helper->redirector('index', 'index', 'default');
         } else {
-            $this->view->errMessage = 'Вы ввели неверное имя пользователя или пароль!';
+            $this->view->errMessage = 'Ви ввели не правильний логін або пароль!';
         }
 
     }

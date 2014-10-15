@@ -4,10 +4,14 @@ body {
   font-family: 'Open Sans', sans-serif;
   font-size: 14px;
   background: #fff;
+  height: 100%;
 }
 html *,
 body * {
   color: #333;
+}
+.layout {
+  min-height: 100%;
 }
 .wrap {
   width: 960px;
@@ -24,21 +28,27 @@ body * {
   padding: 3px 0;
   font-size: 13px;
 }
-.header .top .login {
+.header .top .link {
   color: #fff;
   text-decoration: none;
   float: right;
-  margin-left: 30px;
+  margin-left: 10px;
 }
-.header .top .login:hover {
+.header .top .link:hover {
   color: #66aa33;
+}
+.header .top .link.green {
+  color: #66aa33;
+}
+.header .top .link.green:hover {
+  border-bottom: 1px solid #66aa33;
 }
 .header .logo {
   float: left;
   background: url("../images/logo.png") top left no-repeat;
   width: 80px;
   height: 98px;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
   text-indent: -99999px;
 }
 .header .menu {
@@ -54,18 +64,17 @@ body * {
 }
 .header .menu li a {
   margin: 10px;
+  font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 700;
 }
 .header .menu li a.active,
 .header .menu li a:hover {
-  border-bottom: 2px solid #66aa33;
+  border-bottom: 1px solid #66aa33;
   color: #66aa33;
 }
 .header .menu li span {
-  color: #66aa33;
-  font-weight: 700;
+  font-weight: 100;
 }
 .header .menu li:last-child a {
   margin: 10px 0 10px 10px;
@@ -99,23 +108,41 @@ body * {
 .header .social li .vi {
   background: #fff url("../images/icon-vimeo.jpg") top left no-repeat;
 }
+.header .social li .vk:hover {
+  background: #66aa33 url("../images/icon-vk.png") top left no-repeat;
+}
+.header .social li .fb:hover {
+  background: #66aa33 url("../images/icon-facebook.png") top left no-repeat;
+}
+.header .social li .ig:hover {
+  background: #66aa33 url("../images/icon-instagram.png") top left no-repeat;
+}
+.header .social li .vi:hover {
+  background: #66aa33 url("../images/icon-vimeo.jpg") top left no-repeat;
+}
 .user-part {
   width: 460px;
   float: left;
 }
 .up1 {
-  margin: 0 20px 0 0;
+  margin: 0 20px 30px 0;
 }
 .up2 {
-  margin: 0 0 0 20px;
+  margin: 0 0 30px 20px;
 }
 .insta-item {
   float: left;
   width: 100%;
-  margin: 10px 0;
+  margin: 0 0 30px 0;
   padding: 0px;
   text-decoration: none;
   background: #fff;
+}
+.insta-item strong a {
+  text-decoration: none;
+}
+.insta-item strong a:hover {
+  text-decoration: underline;
 }
 .insta-item .block {
   padding: 5px 10px;
@@ -133,9 +160,17 @@ body * {
 .insta-item .comments {
   margin: 5px 0;
 }
-.footer {
-  width: 100%;
-  float: left;
+.insta-item:hover .block {
+  background: #66aa33;
+}
+.insta-item:hover img {
+  opacity: 0.8;
+}
+.insta-item:hover * {
+  color: #fff;
+}
+.insta-item:hover .likes {
+  background: url("../images/like_neg.png") center left no-repeat;
 }
 .part {
   width: 50%;
@@ -145,6 +180,9 @@ body * {
   margin-right: 20px;
 }
 .p2 .news-item {
+  margin-left: 20px;
+}
+.p2 h2 {
   margin-left: 20px;
 }
 .news-item {
@@ -227,15 +265,190 @@ body * {
 .promo {
   width: 100%;
   float: left;
-  background: url("../images/bg.gif") top left repeat;
-  height: 400px;
+  background: #000 url("../images/bg.gif") top left repeat;
+  height: 500px;
 }
 .promo .bg {
-  height: 400px;
+  height: 500px;
   box-shadow: inset 0px 0px 1px 1px #ccc;
 }
 .promo iframe {
-  width: 720px;
-  height: 400px;
-  margin: 0 120px;
+  width: 960px;
+  height: 500px;
+  margin: 0;
+}
+.hfooter {
+  float: left;
+  width: 100%;
+  height: 360px;
+}
+.footer {
+  float: left;
+  width: 100%;
+  margin-top: -360px;
+  height: 360px;
+  background: #000;
+}
+.footer .block {
+  margin: 30px 0;
+  float: left;
+  width: 240px;
+}
+.footer .block .copy {
+  margin-top: 20px;
+  color: #fff;
+  font-size: 12px;
+  background: url("../images/logo_neg.png") top left no-repeat;
+  padding-top: 100px;
+}
+.footer .block h3 {
+  color: #fff;
+  text-transform: uppercase;
+}
+.footer .block ul {
+  float: left;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.footer .block ul li a {
+  color: #fff;
+  line-height: 28px;
+  text-decoration: none;
+}
+.footer .block ul li a:hover {
+  border-bottom: 1px dashed #fff;
+}
+.footer .bottom {
+  float: left;
+  width: 100%;
+  padding: 10px 0 20px 0;
+  border-top: 1px solid #333;
+  text-align: center;
+}
+.footer .bottom a {
+  color: #999;
+  text-decoration: none;
+  border-bottom: 1px dashed #999;
+  font-size: 12px;
+}
+.footer .bottom a:hover {
+  border: 0;
+}
+.page {
+  position: relative;
+  float: left;
+  width: 100%;
+  border-top: 2px solid #333;
+}
+.page .login {
+  margin: 30px auto;
+  width: 320px;
+}
+.page .login .err,
+.page .login .errors li {
+  color: #ff0000;
+}
+.page .login .zend_form dd {
+  margin: 5px 0 10px 0;
+}
+.page .login .zend_form dd input[type="text"],
+.page .login .zend_form dd input[type="password"] {
+  width: 300px;
+  padding: 10px;
+  border: 0;
+  outline: none;
+  box-shadow: inset 1px 1px 1px 1px #ccc;
+  border-radius: 5px;
+}
+.page .login .zend_form dd input[type="submit"] {
+  width: 320px;
+  background: #66aa33;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 50px;
+  border-radius: 5px;
+  outline: none;
+  border: 0;
+}
+.page .login .zend_form dd input[type="submit"]:hover {
+  box-shadow: inset 0px 0px 1px 1px #fff;
+}
+.video-item {
+  float: left;
+  width: 100%;
+  margin: 10px 0 30px 0;
+}
+.video-item h3 {
+  margin: 0;
+  width: 100%;
+  text-align: left;
+  font-size: 26px;
+}
+.video-item p {
+  margin: 0;
+}
+.video-item iframe {
+  margin-top: 10px;
+  width: 960px;
+  height: 530px;
+}
+.crew {
+  margin: 20px 0 40px 0;
+}
+.crew p {
+  line-height: 22px;
+}
+.news {
+  padding: 20px 0;
+  border-bottom: 1px solid #000;
+}
+.news h1 {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  font-size: 26px;
+  margin: 0;
+}
+.news iframe {
+  width: 960px;
+  height: 520px;
+}
+.news img {
+  float: left;
+  width: 960px;
+  margin: 0;
+}
+.news .pre {
+  float: left;
+  width: 100%;
+  margin: 10px 0;
+}
+.news .pre .item {
+  float: left;
+  margin: 0 50px 0 0;
+}
+.news .pre .item a {
+  font-style: italic;
+  margin: 0 5px 0 0;
+}
+.news .pre .item a:hover {
+  color: #66aa33;
+}
+.news .text {
+  float: left;
+  width: 100%;
+}
+.news .text a:hover {
+  color: #66aa33;
+}
+.news .text img {
+  margin: 5px 0;
+}
+.social {
+  float: left;
+  width: 100%;
+}
+.social .item {
+  float: left;
 }

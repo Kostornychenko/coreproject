@@ -5,11 +5,11 @@ class Application_Form_Login extends Zend_Form {
     public function init() {
         $this->setName('loginform');
 
-        $isEmptyMessage = 'Значение является обязательным и не может быть пустым';
+        $isEmptyMessage = 'Поле не може бути порожнім!';
 
         $username = new Zend_Form_Element_Text('login');
 
-        $username->setLabel('Логин:')
+        $username->setLabel('Логін:')
             ->setRequired(true)
             ->addFilter('StripTags')
             ->addFilter('StringTrim')
@@ -28,7 +28,7 @@ class Application_Form_Login extends Zend_Form {
             );
 
         $submit = new Zend_Form_Element_Submit('submit');
-        $submit->setLabel('Войти');
+        $submit->setLabel('Увійти');
 
         $this->addElements(array($username, $password, $submit));
 
