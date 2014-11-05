@@ -445,10 +445,16 @@ body * {
 .news .text img {
   margin: 5px 0;
 }
-.social {
+.social-btn {
   float: left;
   width: 100%;
 }
-.social .item {
+.social-btn .item {
   float: left;
+}
+.down {
+  float: left;
+  width: 100%;
+  background: #000 url("../images/bg.gif") top left repeat;
+  height: 300px;
 }
